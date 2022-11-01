@@ -1,18 +1,22 @@
-import React from 'react';
-import {NavLink, useLocation} from "react-router-dom";
+import React, {useState} from 'react';
+import {NavLink} from "react-router-dom";
+import Login from "./Login.jsx";
+import LoggedIn from "./LoggedIn.jsx";
 import "../styles/header.css";
 
-function Header(props) {
 
-    // const location = useLocation();
-    // console.log(location)
+function Header({setErrorMsg, loggedIn, setLoggedIn}) {
+
 
     return (
-        <nav className="navbar">
+        <nav className="topnav">
             <NavLink className="active" to="/"><i className="fa fa-fw fa-home"></i> Home</NavLink>
             <NavLink to="/search"><i className="fa fa-fw fa-search"></i> Search</NavLink>
             <NavLink to="/contact"><i className="fa fa-fw fa-envelope"></i> Contact</NavLink>
-            <NavLink to="/login"><i className="fa fa-fw fa-user"></i> Login</NavLink>
+            {!loggedIn ? (<Login setLoggedIn={setLoggedIn} setErrorMsg={setErrorMsg}  />) :
+                (<div>
+                    <LoggedIn setLoggedIn={setLoggedIn}/>
+                </div>)}
         </nav>
     );
 }

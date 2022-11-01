@@ -1,10 +1,10 @@
 import React from 'react';
 
-function Contact({name, address}) {
+function Contact({address}) {
     return (
         <div>
-            Contacts
-            <h3>{name}</h3>
+            <h1>Contacts</h1>
+            <h3>{address.name}</h3>
             <p>{address.street}</p>
             <p>{address.town}</p>
             <p>{address.country}</p>

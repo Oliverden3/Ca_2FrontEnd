@@ -7,7 +7,7 @@ function Search(props) {
 
     return (
         <div>
-            <h3>Search</h3>
+            <h1>Search</h1>
             <form>
                 <input
                     ref={inputRef}
