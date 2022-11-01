@@ -21,6 +21,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                         name={"Jörg Oertel"}
                         address={{street: "Baunehøjvej 6", town: "Lyngby", country: "Denmark"}}/>}/>
                 <Route path="login" element={<Login/>}/>
+                <Route path="*" element={<h1>Page Not Found !!!!</h1>}/>
             </Routes>
         </BrowserRouter>
     </React.StrictMode>

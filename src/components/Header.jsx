@@ -1,8 +1,12 @@
 import React from 'react';
-import {NavLink} from "react-router-dom";
+import {NavLink, useLocation} from "react-router-dom";
 import "../styles/header.css";
 
 function Header(props) {
+
+    // const location = useLocation();
+    // console.log(location)
+
     return (
         <nav className="navbar">
             <NavLink className="active" to="/"><i className="fa fa-fw fa-home"></i> Home</NavLink>
