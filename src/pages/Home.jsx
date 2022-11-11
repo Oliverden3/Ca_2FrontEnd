@@ -6,7 +6,7 @@ import LoggedIn from "../components/LoggedIn.jsx";
 
 function Home({loggedIn}) {
 const [intiailState, setIntiailState] = useState({});
-/*egfisijfihoi*/
+
 
 
 useEffect(() => {
@@ -25,6 +25,9 @@ useEffect(() => {
 
         <div>
             <h3>Homepage</h3>
+
+
+            <button class="btn">want to see a joke??</button>
 
             {!loggedIn ? (<div>no joke</div>) :
                 (<div>

@@ -3,6 +3,7 @@ import {Route, Routes} from "react-router-dom";
 import Home from "./pages/Home.jsx";
 import Search from "./pages/Search.jsx";
 import Contact from "./pages/Contact.jsx";
+import AdminPageDelete from "./pages/AdminPageDelete.jsx";
 import Header from "./components/Header.jsx";
 import apiFacade from "./utils/apiFacade.js";
 
@@ -28,6 +29,7 @@ function App(props) {
                 <Route path="/" element={<Home loggedIn={loggedIn}/>}/>
                 <Route path="search" element={<Search/>}/>
                 <Route path="contact" element={<Contact address={obj}/>}/>
+                <Route path="admin" element={<AdminPageDelete/>}/>
                 <Route path="*" element={<h1>Page Not Found !!!!</h1>}/>
             </Routes>
         </>
