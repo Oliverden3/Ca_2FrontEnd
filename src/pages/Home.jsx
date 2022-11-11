@@ -4,7 +4,7 @@ import Login from "../components/Login.jsx";
 import LoggedIn from "../components/LoggedIn.jsx";
 
 
-function Home(props, loggedIn, setLoggedIn) {
+function Home({loggedIn}) {
 const [intiailState, setIntiailState] = useState({});
 
 

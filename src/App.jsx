@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Route, Routes} from "react-router-dom";
 import Home from "./pages/Home.jsx";
 import Search from "./pages/Search.jsx";
@@ -25,7 +25,7 @@ function App(props) {
         <>
             <Header setLoggedIn={setLoggedIn} loggedIn={loggedIn} />
             <Routes>
-                <Route path="/" element={<Home/>}/>
+                <Route path="/" element={<Home loggedIn={loggedIn}/>}/>
                 <Route path="search" element={<Search/>}/>
                 <Route path="contact" element={<Contact address={obj}/>}/>
                 <Route path="*" element={<h1>Page Not Found !!!!</h1>}/>
