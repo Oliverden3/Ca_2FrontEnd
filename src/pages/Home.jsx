@@ -1,11 +1,15 @@
 import React from 'react';
 import {useEffect,useState} from "react";
+import Login from "../components/Login.jsx";
+import LoggedIn from "../components/LoggedIn.jsx";
 
-function Home(props) {
+
+function Home(props, loggedIn, setLoggedIn) {
 const [intiailState, setIntiailState] = useState({});
 
+
 useEffect(() => {
-    fetch("http://localhost:8080/ca2_backend_war_exploded/api/info/all").then(res =>{
+    fetch("http://localhost:8080/ca2_backend_war_exploded/api/jokes").then(res =>{
         if(res.ok){
             return res.json()
         }
@@ -13,13 +17,31 @@ useEffect(() => {
 
 }, [])
 
-    console.log(intiailState)
+
+    console.log(intiailState.chuckJoke)
+    console.log(intiailState.dadJoke)
     return (
+
         <div>
-            {intiailState.length > 0 && intiailState.map((e,i) => <li key={i}>{e}</li>)}
             <h3>Homepage</h3>
+
+            {!loggedIn ? (<div>no joke</div>) :
+                (<div>
+                    <p>Chuck Joke:</p>
+                    <p>{intiailState.chuckJoke}</p>
+
+                    <p>Dad Joke:</p>
+                    <p>{intiailState.dadJoke}</p>
+
+                </div>)}
+
+
+
         </div>
+
+
     );
 }
 
 export default Home;
+

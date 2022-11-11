@@ -1,4 +1,4 @@
-const URL = "http://localhost:8080";
+const URL = "http://localhost:8080/ca2_backend_war_exploded";
 
 function handleHttpErrors(res) {
     if (!res.ok) {

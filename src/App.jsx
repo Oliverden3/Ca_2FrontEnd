@@ -1,13 +1,18 @@
-import React, {useRef, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {Route, Routes} from "react-router-dom";
 import Home from "./pages/Home.jsx";
 import Search from "./pages/Search.jsx";
 import Contact from "./pages/Contact.jsx";
 import Header from "./components/Header.jsx";
+import apiFacade from "./utils/apiFacade.js";
 
 function App(props) {
 
     const [loggedIn, setLoggedIn] = useState(false)
+
+    useEffect(() => {
+        if(apiFacade.getToken()) setLoggedIn(true)
+    })
 
     const obj = {
         name: "TestName",
@@ -18,7 +23,7 @@ function App(props) {
 
     return (
         <>
-            <Header setLoggedIn={setLoggedIn} loggedIn={loggedIn}/>
+            <Header setLoggedIn={setLoggedIn} loggedIn={loggedIn} />
             <Routes>
                 <Route path="/" element={<Home/>}/>
                 <Route path="search" element={<Search/>}/>
